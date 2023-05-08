@@ -44,6 +44,13 @@ class AutoGPTWeatherPlugin(AutoGPTPluginTemplate):
             get_weather_for,
         )
 
+        prompt.add_command(
+            "What is the weather in",
+            "get_weather_for",
+            {"city": "<city>"},
+            get_weather_for,
+        )
+
         return prompt
 
     def can_handle_on_planning(self) -> bool:
